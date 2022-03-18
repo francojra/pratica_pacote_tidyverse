@@ -7,3 +7,12 @@
 
 library(dplyr)
 library(ggplot2)
+
+# Carregar dados ---------------------------------------------------------------------------------------------------------------------------
+
+dados <- starwars
+View(dados)
+
+dados %>%
+  select(mass, hair_color) %>%
+  filter(hair_color == "brown")
