@@ -48,6 +48,16 @@ dados_3 <- dados %>%
   summarise_all(list(mean), na.rm = TRUE)
 dados_3
 
-ggplot(dados_3, aes(x = species, y = height)) +
+plot_altura <- ggplot(dados_3, aes(x = species, y = height)) +
   geom_col(aes(fill = species)) +
-  scale_x_discrete(limits = c("Gungan", "Besalisk", "Droid", "Dug", "Ewok"))
+  scale_x_discrete(limits = c("Gungan", "Besalisk", "Droid", "Dug", "Ewok")) +
+  scale_fill_discrete(name = "Espécies") +
+  labs(x = "Espécies", y = "Altura (cm)")
+plot_altura
+
+plot_massa <- ggplot(dados_3, aes(x = species, y = mass)) +
+  geom_col(aes(fill = species)) +
+  scale_x_discrete(limits = c("Besalisk", "Gungan", "Droid", "Dug", "Ewok")) +
+  scale_fill_discrete(name = "Espécies") +
+  labs(x = "Espécies", y = "Massa (kg)")
+plot_massa
