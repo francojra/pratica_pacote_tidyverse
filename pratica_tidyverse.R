@@ -43,6 +43,7 @@ ggplot(dados_2, aes(x = height, y = mass)) +
 
 dados_3 <- dados %>%
   select(height, mass, eye_color) %>%
+  filter(eye_color %in% c("black", "blue", "orange", "white", "yellow")) %>%
   group_by(eye_color) %>%
   summarise_all(list(mean), na.rm = TRUE)
 dados_3
