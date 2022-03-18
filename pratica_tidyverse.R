@@ -16,3 +16,7 @@ View(dados)
 dados %>%
   select(mass, hair_color) %>%
   filter(hair_color == "brown")
+
+dados %>%
+  select(height, hair_color) %>%
+  filter(hair_color == "brown")
