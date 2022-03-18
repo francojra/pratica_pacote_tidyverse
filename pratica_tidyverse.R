@@ -42,9 +42,12 @@ ggplot(dados_2, aes(x = height, y = mass)) +
   geom_point()
 
 dados_3 <- dados %>%
-  select(height, mass, eye_color) %>%
-  filter(eye_color %in% c("black", "blue", "orange", "white", "yellow")) %>%
-  group_by(eye_color) %>%
+  select(height, mass, species) %>%
+  filter(species %in% c("Besalisk", "Dug", "Gungan", "Ewok", "Droid")) %>%
+  group_by(species) %>%
   summarise_all(list(mean), na.rm = TRUE)
 dados_3
 
+ggplot(dados_3, aes(x = species, y = height)) +
+  geom_col(aes(fill = species)) +
+  scale_x_discrete(limits = c("Gungan", "Besalisk", "Droid", "Dug", "Ewok"))
