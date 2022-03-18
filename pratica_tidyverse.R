@@ -41,9 +41,9 @@ dados_2
 ggplot(dados_2, aes(x = height, y = mass)) +
   geom_point()
 
-dados_2 <- dados %>%
-  select(height, mass) %>%
-  group_by(Species) %>%
-  summarise_all(list(min, max, mean))
-
+dados_3 <- dados %>%
+  select(height, mass, eye_color) %>%
+  group_by(eye_color) %>%
+  summarise_all(list(mean), na.rm = TRUE)
+dados_3
 
