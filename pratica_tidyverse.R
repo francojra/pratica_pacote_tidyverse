@@ -20,3 +20,30 @@ dados %>%
 dados %>%
   select(height, hair_color) %>%
   filter(hair_color == "brown")
+
+dados_1 <- dados %>%
+  select(height, mass) %>%
+  summarise_at(c("height", "mass"), list(max, min), na.rm = TRUE) 
+dados_1
+
+dados_2 <- dados %>%
+  select(height, mass) 
+dados_2
+
+ggplot(dados_2, aes(x = height, y = mass)) +
+  geom_point()
+
+dados_2 <- dados %>%
+  select(height, mass) %>%
+  filter(mass != 1358) # Elimina o valor máximo (outlier que impede ver a tendência)
+dados_2
+
+ggplot(dados_2, aes(x = height, y = mass)) +
+  geom_point()
+
+dados_2 <- dados %>%
+  select(height, mass) %>%
+  group_by(Species) %>%
+  summarise_all(list(min, max, mean))
+
+
