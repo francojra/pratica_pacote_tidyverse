@@ -13,6 +13,8 @@ library(ggplot2)
 dados <- starwars
 View(dados)
 
+# Manipulação de dados 1 -------------------------------------------------------------------------------------------------------------------
+
 dados %>%
   select(mass, hair_color) %>%
   filter(hair_color == "brown")
@@ -30,16 +32,24 @@ dados_2 <- dados %>%
   select(height, mass) 
 dados_2
 
+# Gráfico 1 --------------------------------------------------------------------------------------------------------------------------------
+
 ggplot(dados_2, aes(x = height, y = mass)) +
   geom_point()
+
+# Manipulação de dados 2 -------------------------------------------------------------------------------------------------------------------
 
 dados_2 <- dados %>%
   select(height, mass) %>%
   filter(mass != 1358) # Elimina o valor máximo (outlier que impede ver a tendência)
 dados_2
 
+# Gráfico 2 --------------------------------------------------------------------------------------------------------------------------------
+
 ggplot(dados_2, aes(x = height, y = mass)) +
   geom_point()
+
+# Manipulação de dados 3 -------------------------------------------------------------------------------------------------------------------
 
 dados_3 <- dados %>%
   select(height, mass, species) %>%
@@ -47,6 +57,8 @@ dados_3 <- dados %>%
   group_by(species) %>%
   summarise_all(list(mean), na.rm = TRUE)
 dados_3
+
+# Gráficos 3 -------------------------------------------------------------------------------------------------------------------------------
 
 plot_altura <- ggplot(dados_3, aes(x = species, y = height)) +
   geom_col(aes(fill = species)) +
