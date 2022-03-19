@@ -105,12 +105,12 @@ dados_5
 
 massa_genero_box <- ggplot(dados_5, aes(x = gender, y = mass)) +
   geom_violin(col = "blue") +
-  geom_boxplot(aes(fill = gender)) +
+  geom_boxplot(aes(fill = gender), width = 0.2) +
   geom_jitter()
 massa_genero_box
 
 altura_genero_box <- ggplot(dados_5, aes(x = gender, y = height)) +
   geom_violin(col = "blue") +
-  geom_boxplot(aes(fill = gender)) +
+  geom_boxplot(aes(fill = gender), width = 0.2) +
   geom_jitter()
 altura_genero_box
