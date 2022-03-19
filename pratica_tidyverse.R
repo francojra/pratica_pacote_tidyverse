@@ -82,3 +82,13 @@ dados_4 <- dados %>%
   group_by(gender) %>%
   summarise_all(list(mean), na.rm = TRUE)
 dados_4  
+
+# Gráficos 4 -------------------------------------------------------------------------------------------------------------------------------
+
+massa_genero <- ggplot(dados_4, aes(x = gender, y = mass)) +
+  geom_col(aes(fill = gender))
+massa_genero
+
+altura_genero <- ggplot(dados_4, aes(x = gender, y = height)) +
+  geom_col(aes(fill = gender))
+altura_genero
