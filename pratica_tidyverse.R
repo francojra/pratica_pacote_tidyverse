@@ -92,3 +92,25 @@ massa_genero
 altura_genero <- ggplot(dados_4, aes(x = gender, y = height)) +
   geom_col(aes(fill = gender))
 altura_genero
+
+# Manipulação de dados 5 -------------------------------------------------------------------------------------------------------------------
+
+dados_5 <- dados %>%
+  select(gender, mass, height) %>%
+  filter(gender %in% c("feminine", "masculine")) %>%
+  filter(mass != 1358)
+dados_5
+
+# Gráficos 5 -------------------------------------------------------------------------------------------------------------------------------
+
+massa_genero_box <- ggplot(dados_5, aes(x = gender, y = mass)) +
+  geom_violin(col = "blue") +
+  geom_boxplot(aes(fill = gender)) +
+  geom_jitter()
+massa_genero_box
+
+altura_genero_box <- ggplot(dados_5, aes(x = gender, y = height)) +
+  geom_violin(col = "blue") +
+  geom_boxplot(aes(fill = gender)) +
+  geom_jitter()
+altura_genero_box
