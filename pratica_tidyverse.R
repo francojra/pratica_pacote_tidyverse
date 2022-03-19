@@ -73,3 +73,12 @@ plot_massa <- ggplot(dados_3, aes(x = species, y = mass)) +
   scale_fill_discrete(name = "Espécies") +
   labs(x = "Espécies", y = "Massa (kg)")
 plot_massa
+
+# Manipulação de dados 4 -------------------------------------------------------------------------------------------------------------------
+
+dados_4 <- dados %>%
+  select(gender, mass, height) %>%
+  filter(gender %in% c("feminine", "masculine")) %>%
+  group_by(gender) %>%
+  summarise_all(list(mean), na.rm = TRUE)
+dados_4  
