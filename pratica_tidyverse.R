@@ -172,5 +172,11 @@ dados_8 <- dados %>%
   select(mass, sex) %>%
   filter(sex %in% c("male", "female", "hermaphroditic")) %>%
   group_by(sex) %>%
-  summarise(mean(mass, na.rm = TRUE))
+  summarise(media_massa = mean(mass, na.rm = TRUE))
 dados_8
+
+# Gráfico 8 --------------------------------------------------------------------------------------------------------------------------------
+
+ggplot(dados_8, aes(x = sex, y = media_massa)) +
+  geom_col(aes(fill = sex)) +
+  scale_x_discrete(limits = c("female", "male", "hermaphroditic"))
