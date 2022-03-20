@@ -238,11 +238,20 @@ ggplot(dados_11, aes(x = homeworld, y = species)) +
 
 dados_12 <- dados %>%
   select(mass, height, birth_year) %>%
-  filter(mass != 1358)
+  filter(mass != 1358 & birth_year <= 300)
 dados_12
+View(dados_12)
 
 # Gráficos 12 ------------------------------------------------------------------------------------------------------------------------------
 
 massa <- ggplot(dados_12, aes(x = mass)) +
-  geom_histogram(bins = 30)
+  geom_histogram(bins = 30, col = "black", fill = "lightblue")
 massa
+
+altura <- ggplot(dados_12, aes(x = height)) +
+  geom_histogram(bins = 30, col = "black", fill = "lightblue")
+altura
+
+idade <- ggplot(dados_12, aes(x = birth_year)) +
+  geom_histogram(bins = 30, col = "black", fill = "lightblue")
+idade
