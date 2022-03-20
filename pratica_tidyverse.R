@@ -137,9 +137,6 @@ ggplot(dados_6, aes(x = species, y = birth_year)) +
   geom_col(aes(fill = species)) +
   scale_x_discrete(limits = c("Wookiee", "Cerean", "Human", "Droid", "Ewok"))
 
-
-
-
 # Manipulação de dados 7 -------------------------------------------------------------------------------------------------------------------
 
 dados_7 <- dados %>%
@@ -148,3 +145,14 @@ dados_7 <- dados %>%
   group_by(skin_color) %>%
   summarise_at(c("height", "mass", "birth_year"), list(mean), na.rm = TRUE)
 dados_7
+
+# Gráficos 7 -------------------------------------------------------------------------------------------------------------------------------
+
+altura_pele <- ggplot(dados_7, aes(x = skin_color, y = height)) +
+  geom_col(aes(fill = skin_color)) 
+altura_pele
+
+massa_pele <- ggplot(dados_7, aes(x = skin_color, y = mass)) +
+  geom_col(aes(fill = skin_color)) +
+  scale_x_discrete(limits = c("blue", "dark", "green", "red", "brown"))
+massa_pele
