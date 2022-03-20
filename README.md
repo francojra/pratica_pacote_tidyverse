@@ -1,7 +1,7 @@
 # Prática com o pacote tidyverse
 ### Pacotes ggplot2 e dplyr
 
-- Pacotes tidyverse - Prática
+- Prática com os pacotes do tidyverse
 - Autoria do script: Jeanne Franco
 - Data: 17/03/2022
 
