@@ -211,3 +211,18 @@ dados_10
 ggplot(dados_10, aes(x = skin_color, y = eye_color)) +
   geom_count() +
   labs(x = "Cor da pele", y = "Cor dos olhos")
+
+# Manipulação de dados 11 ------------------------------------------------------------------------------------------------------------------
+
+unique(dados$homeworld)
+unique(dados$species)
+
+dados_11 <- dados %>%
+  select(species, homeworld) %>%
+  filter(species %in% c("Human", "Wookiee", "Ewok", "Cerean", "Xexto",
+                        "Rodian" , "Hutt" , "Gungan", "Aleena", "Clawdite",
+                        "Muun", "Droid") & 
+         homeworld %in% c("Naboo", "Alderaan", "Tatooine", "Cerea", "Tund",
+                          "Zolan", "Ojom", "Kalee", "Aleen Minor", "Mon Cala",
+                          "Iridonia", "Chandrila"))
+dados_11
