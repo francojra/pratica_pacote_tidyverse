@@ -17,4 +17,16 @@
 9. Manipulação de dados 4;
 10. Gráficos 4;
 11. Manipulação de dados 5;
-12. Gráficos 5.
+12. Gráficos 5;
+13. Manipulação de dados 6;
+14. Gráfico 5;
+15. Manipulação de dados 7;
+16. Gráficos 7;
+17. Manipulação de dados 8;
+18. Gráfico 8;
+19. Manipulação de dados 9;
+20. Gráfico 9;
+21. Manipulação de dados 10;
+22. Gráfico 10;
+23. Manipulação de dados 11;
+24. Gráfico 11.
