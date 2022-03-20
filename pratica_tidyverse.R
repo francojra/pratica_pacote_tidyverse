@@ -197,3 +197,17 @@ ggplot(dados_9, aes(x = sex, y = media_massa)) +
   geom_col(aes(fill = sex)) +
   scale_x_discrete(limits = c("female", "male")) +
   theme(legend.position = "none")
+
+# Manipulação de dados 10 ------------------------------------------------------------------------------------------------------------------
+
+dados_10 <- dados %>%
+  select(skin_color, eye_color) %>%
+  filter(skin_color %in% c("gold", "white", "light", "green", "pale", "fair",
+                           "grey", "dark", "red"))
+dados_10
+
+# Gráfico 10 -------------------------------------------------------------------------------------------------------------------------------
+
+ggplot(dados_10, aes(x = skin_color, y = eye_color)) +
+  geom_count() +
+  labs(x = "Cor da pele", y = "Cor dos olhos")
