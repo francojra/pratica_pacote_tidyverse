@@ -255,3 +255,15 @@ altura
 idade <- ggplot(dados_12, aes(x = birth_year)) +
   geom_histogram(bins = 30, col = "black", fill = "lightblue")
 idade
+
+massa_dens <- ggplot(dados_12, aes(x = mass)) +
+  geom_density(col = "black", fill = "lightblue")
+massa_dens
+
+altura_dens <- ggplot(dados_12, aes(x = height)) +
+  geom_density(col = "black", fill = "lightblue")
+altura_dens
+
+idade_dens <- ggplot(dados_12, aes(x = birth_year)) +
+  geom_density(col = "black", fill = "lightblue")
+idade_dens
