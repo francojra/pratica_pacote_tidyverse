@@ -149,7 +149,8 @@ dados_7
 # Gráficos 7 -------------------------------------------------------------------------------------------------------------------------------
 
 altura_pele <- ggplot(dados_7, aes(x = skin_color, y = height)) +
-  geom_col(aes(fill = skin_color)) 
+  geom_col(aes(fill = skin_color)) +
+  scale_x_discrete(limits = c("green", "brown", "red", "dark", "blue"))
 altura_pele
 
 massa_pele <- ggplot(dados_7, aes(x = skin_color, y = mass)) +
