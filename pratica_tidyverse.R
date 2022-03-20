@@ -150,10 +150,18 @@ dados_7
 
 altura_pele <- ggplot(dados_7, aes(x = skin_color, y = height)) +
   geom_col(fill = "#cab2d6") +
-  scale_x_discrete(limits = c("green", "brown", "red", "dark", "blue"))
+  scale_x_discrete(limits = c("green", "brown", "red", "dark", "blue")) +
+  theme_light()
 altura_pele
 
 massa_pele <- ggplot(dados_7, aes(x = skin_color, y = mass)) +
   geom_col(fill = "#cab2d6") +
-  scale_x_discrete(limits = c("blue", "dark", "green", "red", "brown"))
+  scale_x_discrete(limits = c("blue", "dark", "green", "red", "brown")) +
+  theme_light()
 massa_pele
+
+idade_pele <- ggplot(dados_7, aes(x = skin_color, y = birth_year)) +
+  geom_col(fill = "#cab2d6") +
+  scale_x_discrete(limits = c("brown", "blue", "dark", "red", "green")) +
+  theme_light()
+idade_pele
