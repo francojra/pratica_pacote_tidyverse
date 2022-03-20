@@ -233,3 +233,16 @@ View(dados_11)
 ggplot(dados_11, aes(x = homeworld, y = species)) +
   geom_count() +
   labs(x = "Planeta natal", y = "Espécies")
+
+# Manipulação de dados 12 ------------------------------------------------------------------------------------------------------------------
+
+dados_12 <- dados %>%
+  select(mass, height, birth_year) %>%
+  filter(mass != 1358)
+dados_12
+
+# Gráficos 12 ------------------------------------------------------------------------------------------------------------------------------
+
+massa <- ggplot(dados_12, aes(x = mass)) +
+  geom_histogram(bins = 30)
+massa
