@@ -29,4 +29,6 @@
 21. Manipulação de dados 10;
 22. Gráfico 10;
 23. Manipulação de dados 11;
-24. Gráfico 11.
+24. Gráfico 11;
+25. Manipulação de dados 12;
+26. Gráficos 12;
