@@ -226,3 +226,10 @@ dados_11 <- dados %>%
                           "Zolan", "Ojom", "Kalee", "Aleen Minor", "Mon Cala",
                           "Iridonia", "Chandrila"))
 dados_11
+View(dados_11)
+
+# Gráfico 11 -------------------------------------------------------------------------------------------------------------------------------
+
+ggplot(dados_11, aes(x = homeworld, y = species)) +
+  geom_count() +
+  labs(x = "Planeta natal", y = "Espécies")
