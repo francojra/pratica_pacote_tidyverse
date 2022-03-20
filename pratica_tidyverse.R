@@ -165,3 +165,12 @@ idade_pele <- ggplot(dados_7, aes(x = skin_color, y = birth_year)) +
   scale_x_discrete(limits = c("brown", "blue", "dark", "red", "green")) +
   theme_light()
 idade_pele
+
+# Manipulação de dados 8 -------------------------------------------------------------------------------------------------------------------
+
+dados_8 <- dados %>%
+  select(mass, sex) %>%
+  filter(sex %in% c("male", "female", "hermaphroditic")) %>%
+  group_by(sex) %>%
+  summarise(mean(mass, na.rm = TRUE))
+dados_8
