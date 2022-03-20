@@ -179,4 +179,21 @@ dados_8
 
 ggplot(dados_8, aes(x = sex, y = media_massa)) +
   geom_col(aes(fill = sex)) +
-  scale_x_discrete(limits = c("female", "male", "hermaphroditic"))
+  scale_x_discrete(limits = c("female", "male", "hermaphroditic")) +
+  theme(legend.position = "none")
+
+# Manipulação de dados 9 -------------------------------------------------------------------------------------------------------------------
+
+dados_9 <- dados %>%
+  select(mass, sex) %>%
+  filter(sex %in% c("male", "female")) %>%
+  group_by(sex) %>%
+  summarise(media_massa = mean(mass, na.rm = TRUE))
+dados_9
+
+# Gráfico 9 --------------------------------------------------------------------------------------------------------------------------------
+
+ggplot(dados_9, aes(x = sex, y = media_massa)) +
+  geom_col(aes(fill = sex)) +
+  scale_x_discrete(limits = c("female", "male")) +
+  theme(legend.position = "none")
