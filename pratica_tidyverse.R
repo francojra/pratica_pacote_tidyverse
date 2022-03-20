@@ -131,6 +131,11 @@ dados_6 <- dados %>%
   summarise_all(list(mean), na.rm = TRUE)
 dados_6
 
+# Gráfico 6 -------------------------------------------------------------------------------------------------------------------------------
+
+ggplot(dados_6, aes(x = species, y = birth_year)) +
+  geom_col(aes(fill = species)) +
+  scale_x_discrete(limits = c("Wookiee", "Cerean", "Human", "Droid", "Ewok"))
 
 
 
