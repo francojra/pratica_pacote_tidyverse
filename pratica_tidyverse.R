@@ -114,3 +114,32 @@ altura_genero_box <- ggplot(dados_5, aes(x = gender, y = height)) +
   geom_boxplot(aes(fill = gender), width = 0.2) +
   geom_jitter()
 altura_genero_box
+
+# Manipulação de dados 6 -------------------------------------------------------------------------------------------------------------------
+
+dados_6 <- dados %>%
+  select(species, birth_year) %>%
+  filter(species %in% c("Human", "Droid", "Wookiee", "Ewok", "Cerean")) %>%
+  group_by(species) %>%
+  summarise(mean(birth_year, na.rm = TRUE))
+dados_6
+  
+dados_6 <- dados %>%
+  select(species, birth_year) %>%
+  filter(species %in% c("Human", "Droid", "Wookiee", "Ewok", "Cerean")) %>%
+  group_by(species) %>%
+  summarise_all(list(mean), na.rm = TRUE)
+dados_6
+
+
+
+
+
+# Manipulação de dados 7 -------------------------------------------------------------------------------------------------------------------
+
+dados_7 <- dados %>%
+  select(height, mass, birth_year, skin_color) %>%
+  filter(skin_color %in% c("green", "red", "blue", "brown", "dark")) %>%
+  group_by(skin_color) %>%
+  summarise_at(c("height", "mass", "birth_year"), list(mean), na.rm = TRUE)
+dados_7
